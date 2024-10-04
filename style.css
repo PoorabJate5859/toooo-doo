@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8e8e8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#todo-lst {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #4a4a4a;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Space between input and button */
+    margin-bottom: 20px;
+}
+
+#todo-input {
+    width: 70%; /* Adjust input width to allow space for button */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#add-btn {
+    background: linear-gradient(145deg, #6d6d6d, #5a5a5a);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px #a0a0a0, -5px -5px 15px #ffffff;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#add-btn.flipped {
+    animation: flipY 0.6s forwards;
+}
+
+@keyframes flipY {
+    0% {
+        transform: rotateY(0);
+    }
+    50% {
+        transform: rotateY(90deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+ul.list {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.list li {
+    padding: 10px;
+    margin: 10px 0;
+    background: #f0f0f0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.list li button.complete-btn {
+    background: linear-gradient(145deg, #e0e0e0, #c4c4c4);
+    border: none;
+    color: #4CAF50;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.list li button.delete-btn {
+    background: linear-gradient(145deg, #e0e0e0, #c4c4c4);
+    border: none;
+    color: #f44336;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+@keyframes flipX {
+    0% {
+        transform: rotateX(0);
+    }
+    50% {
+        transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes shakeAndZoomOut {
+    0% {
+        transform: scale(1) translateX(0);
+        opacity: 1;
+    }
+    20% {
+        transform: scale(1.05) translateX(-5px);
+    }
+    40% {
+        transform: scale(1.05) translateX(5px);
+    }
+    60% {
+        transform: scale(1.05) translateX(-5px);
+    }
+    80% {
+        transform: scale(1) translateX(0);
+    }
+    100% {
+        transform: scale(0) translateX(0);
+        opacity: 0;
+    }
+}
+
+.delete-animate {
+    animation: shakeAndZoomOut 0.6s forwards;
+}
